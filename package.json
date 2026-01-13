@@ -2,23 +2,38 @@
   "name": "apkiller",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
+    "electron": "npx electron launch-electron.mjs",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"npm run dev\" \"npm run electron\"",
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.3",
+    "electron-store": "^10.1.0",
+    "mica-electron": "^1.5.16",
+    "next": "15.4.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.3"
+    "react-icons": "^5.5.0",
+    "use-file-picker": "^2.1.4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.4",
+    "eslint": "9.32.0",
+    "eslint-config-next": "15.4.4",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "wait-on": "^8.0.4"
   }
 }
